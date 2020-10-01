@@ -1,5 +1,5 @@
 import React from 'react';
-import lilian from '../img/lilian.png';
+import lilian from './img/lilian.png';
 import './App.css';
 
 function App() {
