@@ -9,9 +9,14 @@ import Firebase, { FirebaseContext } from './components/Firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  <FirebaseContext.Provider value={new Firebase()}>
-    <App />
-  </FirebaseContext.Provider>,
+ // <FirebaseContext.Provider value={new Firebase()}>
+  //  <App />,
+  <div>
+    {
+      process.env.REACT_APP_API_KEY
+    }
+  </div>,
+ // </FirebaseContext.Provider>,
   document.getElementById('root'),
 );
 
