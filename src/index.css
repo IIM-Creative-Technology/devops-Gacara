@@ -1,13 +1,261 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+html{
+  background-color: #282c34;
+}
+
+
+/*NAVIGATION BAR */
+
+.nav-margin-bottom{
+  margin-bottom: 10vh;
+}
+.navbar-brand{
+  font-size: 2rem!important;
+  margin-right: 3rem!important;
+  padding-top: 0rem!important;
+  padding-bottom: .5rem!important;
+}
+
+
+.Landing {
+  text-align: center;
+  background-color: #282c34;
+}
+
+
+.Landing-header {
+  background-color: #282c34;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* BUTTON ROUND */
+.round-button{
+  height: auto;
+  width: 150px;
+  border-radius: 50%;
+  font-size: 6rem;
+  color: #ffffff!important;
+  background-color: black;
+  margin: 50px 0 50px 0;
+  text-decoration: none!important;
+  font-family: sans-serif;
+}
+
+/*CARD*/
+.card{
+  border:0px!important;
+  background: rgb(136,94,26);
+  background: linear-gradient(0deg, rgba(136,94,26,1) 9%, rgba(95,217,144,1) 18%, rgba(50,255,250,1) 29%, rgba(50,255,250,1) 72%, rgba(255,255,255,1) 82%)!important;
+}
+
+.custom-card-header{
+  padding: 0 1.25rem 1.25rem 1.25rem!important;
+}
+
+.pokemon{
+  width: 100%;
+}
+
+.custom-name{
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000000!important;
+  font-size: 1.2rem;
+  text-decoration: none!important;
+  margin-right: 10px;
+}
+
+/*   INFO  */
+.info{
+  border:0px!important;
+  background: rgb(136,94,26);
+  background: linear-gradient(0deg, rgba(136,94,26,1) 9%, rgba(95,217,144,1) 18%, rgba(50,255,250,1) 29%, rgba(50,255,250,1) 72%, rgba(255,255,255,1) 82%)!important;
+  width: 75%;
+}
+
+
+/* SCROLL BAR */
+::-webkit-scrollbar-track
+{
+	border: 1px solid black;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #000000;	
+}
+
+/* CUSTOM H1 */
+.custom-h1{
+  font-size: 1.5rem;
+  color: #ffffff!important;
+}
+
+
+/* CUSTOM A */
+.custom-a{
+  font-weight:bold;
+  text-transform: uppercase;
+  color: #e30000!important;
+  font-size: 1.2rem;
+  text-decoration: none!important;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  color: #ffffff!important;
+  background-color: black;
+  padding: 1%;
+  margin: 50px 0 50px 0;
+  text-decoration: none!important;
+}
+
+.icon{
+  display:inline-block;
+  width:15%;
+}
+
+/* CUSTOM P */
+.custom-p{
+  padding-top: 10px;
+    font-size: 3rem;
+}
+
+/* CUSTOM REFRESH BUTTON*/
+.custom-refresh-button{
+  font-weight:bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  color: #ffffff!important;
+  background-color: black;
+  padding: 5%;
+  margin: 50px 0 50px 0;
+  text-decoration: none!important;
+}
+
+/* CUSTOM UPLOAD BUTTON*/
+.custom-upload-button{
+  font-weight:bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  color: #ffffff!important;
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 29%, rgba(252,176,69,1) 69%, rgba(81,253,46,1) 100%);
+  padding: 4%;
+  margin: 50px 0 50px 0;
+  text-decoration: none!important;
+}
+
+/* CUSTOM FORM */
+.background-color{
+  background-color: #282c34;
+}
+
+.margin-top-bot{
+  margin: 25px 0px 25px 0px;
+}
+
+.custom-button{
+  font-size: 1.5rem!important;
+  border-radius: 15px;
+  color: #ffffff!important;
+  background-color: black!important;
+  padding: 1%;
+  text-decoration: none!important;
+  border-color: #b9bbbd!important;
+}
+
+
+
+/* CUSTOM INPUT */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.custom-input{
+  text-align: center;
+}
+
+
+
+
+/* CUSTOM TABLE */
+.custom-table tr{
+  font-size: 1.25rem;
+}
+
+/* CUSTOM CHECKBOX */
+  .custom-toggle-chroma{
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    border-radius: 15px;
+    color: #ffffff!important;
+    background: black;
+    padding: 4%;
+    text-decoration: none!important;
+  }
+
+  .custom-toggle-capture{
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    border-radius: 15px;
+    color: #ffffff!important;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(209,118,118,1) 18%, rgba(235,29,29,1) 49%, rgba(135,29,29,1) 72%, rgba(0,0,0,1) 100%);
+    padding: 4%;
+    text-decoration: none!important;
+  }
+
+  /*CUSTOM IMG CHROMA */
+  .chroma-img{
+    width: 30%;
+    padding: 20px 0px;   
+  }
+
+    /*CUSTOM IMG CAPTURE */
+    .capture-img{
+      width: 30%;
+      padding: 20px 0px 20px 20px;   
+    }
+
+
+
+/* CUSTOM SIGNOUT */
+.custom-signout{
+  font-weight:bold;
+  font-size: 1rem;
+  border-radius: 15px;
+  color: #000000!important;
+  padding: 5%;
+  text-decoration: none!important;
+} 
