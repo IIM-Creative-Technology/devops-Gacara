@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Shasser.fr
 
-## Available Scripts
+Le site d'aide à la capture de Pokémon Shinny
 
-In the project directory, you can run:
+## Fonctionnement
 
-### `yarn start`
+Le projet utilise Github Action afin de tester notre code et de le déployer automatiquement sur Heroku
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Le code est issu d'un ancien projet en ReactJs, sans l'utilisation des hooks et de typescript
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Il y a 2 branches, master et pre-prod, on effectue les modifications sur la branche Pre-prod et on envoit une pull request une fois que des les tests sont validés afin de fusionner
+le code avec la branche master.
 
-### `yarn test`
+A chaque push, github actions effectue les tests, build notre application et la déploie.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Liens
+Lien production : [shasser.fr](https://click-the-lilian.herokuapp.com/)
 
-### `yarn build`
+Lien Pre-prod : [pre-pro.shasser.fr](https://pre-prod-click-the-lilian.herokuapp.com/)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Configurations
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Github Workflow
+deploy.yml est le fichier pour les actions lors d'un push sur la branche master (Production).
+preProdCheck.yml est le fichier pour les actions lors d'un push sur la branche preprod (Preprod).
 
-### `yarn eject`
+## Explication des steps actions
+- **Init project** permet d'accéder à notre repository.
+- **Use Node.js** permet d'installer Nodejs.
+- **Install Packages** installe toutes les dépendances du projet.
+- **Build page** permet de construire l'application
+- **Deploy to Heroku** permet de deployer le projet sur Heroku afin de l'héberger
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Les variables utilisées
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Afin de rendre fonctionnel les Github Actions et l'utilisation de la base de données de Firebase en deploiement, on configure les variables suivantes :
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Sur Github Actions pour le déploiement sur Heroku
+Secrets : 
+```yml
+# deploy.yml
+heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+heroku_app_name: ${{secrets.HEROKU_APP}}
+heroku_email: ${{secrets.HEROKU_EMAIL}}
 
-## Learn More
+# preProdCheck.yml
+heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+heroku_app_name: ${{secrets.HEROKU_APP2}}
+heroku_email: ${{secrets.HEROKU_EMAIL}}
+```
+Sur Heroku pour la connexion avec Firebase
+Variables : 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```yml
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+```
